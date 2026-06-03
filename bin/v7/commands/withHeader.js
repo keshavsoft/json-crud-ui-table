@@ -7,23 +7,23 @@ import { announce } from "./WithHeader/steps/announce.js";
 import resolveFolderName from "./WithHeader/steps/resolveFolderName.js";
 import checks from "./WithHeader/steps/checks.js";
 
+import alterJson from "./WithHeader/steps/alterJson.js";
+
 export default ({
     folderName = "",
     toPath = process.cwd(),
     inAnnounce = true,
-    showLog = false
+    showLog = "false",
+    inAlterConfig = true,
+    tableName
 }) => {
-    if (showLog) {
-        console.log("Resolving folder name...");
-    };
+    if (showLog.trim() === "true") console.log("Resolving folder name...");
 
     const resolvedFolderName = resolveFolderName({
         name: folderName
     });
 
-    if (showLog) {
-        console.log(`resolvedFolderName : ${resolvedFolderName}`);
-    };
+    if (showLog.trim() === "true") console.log(`resolvedFolderName : ${resolvedFolderName}`);
 
     const fromChecks = checks({
         toPath,
@@ -34,16 +34,14 @@ export default ({
 
     if (fromChecks) return false;
 
-    if (showLog) {
-        console.log("Locating source...");
-    }
+    if (showLog.trim() === "true") console.log("Locating source...");
 
     const source = locateSource({
         showLog
     });
 
-    if (showLog) console.log(`Source is : ${source}`);
-    if (showLog) console.log("Locating destination...");
+    if (showLog.trim() === "true") console.log(`Source is : ${source}`);
+    if (showLog.trim() === "true") console.log("Locating destination...");
 
     const destination = locateDestination({
         inToPath: toPath,
@@ -51,8 +49,8 @@ export default ({
         showLog
     });
 
-    if (showLog) console.log(`Destination is : ${destination}`);
-    if (showLog) console.log("Creating project...");
+    if (showLog.trim() === "true") console.log(`Destination is : ${destination}`);
+    if (showLog.trim() === "true") console.log("Creating project...");
 
     createProject({
         source,
@@ -60,15 +58,22 @@ export default ({
         showLog
     });
 
-    if (inAnnounce) {
+    if (showLog.trim() === "true") console.log("Alter config started...");
 
-        if (showLog) {
-            console.log("Announcing...");
-        }
+    if (inAlterConfig) {
+        alterJson({
+            inDestination: destination,
+            inToPath: toPath,
+            tableName
+        });
+    };
+
+    if (inAnnounce) {
+        if (showLog.trim() === "true") console.log("Announcing...");
 
         announce({
             inResolvedFolderName: resolvedFolderName,
             showLog
         });
-    }
+    };
 };

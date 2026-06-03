@@ -43,3 +43,8 @@ The format is based on Keep a Changelog.
 
 ### Added
 - test init good
+
+## [1.7.2] - 2026-06-03
+
+### Added
+- with header working on alter config
