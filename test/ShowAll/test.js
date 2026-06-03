@@ -1,6 +1,6 @@
 import { load } from "../../index.js";
 
-const commandToSend = "initHeaderFromCdn";
+const commandToSend = "ShowAll";
 
 const startFunc = async (...a) =>
     (await load(commandToSend))(...a);
