@@ -1,11 +1,11 @@
-import { locateSource } from "./ShowAll/steps/locateSource.js";
-import { locateDestination } from "./ShowAll/steps/locateDestination.js";
+import { locateSource } from "./ShowAllWithSerial/steps/locateSource.js";
+import { locateDestination } from "./ShowAllWithSerial/steps/locateDestination.js";
 
-import { createProject } from "./ShowAll/steps/createProject.js";
-import { announce } from "./ShowAll/steps/announce.js";
+import { createProject } from "./ShowAllWithSerial/steps/createProject.js";
+import { announce } from "./ShowAllWithSerial/steps/announce.js";
 
-import resolveFolderName from "./ShowAll/steps/resolveFolderName.js";
-import checks from "./ShowAll/steps/checks.js";
+import resolveFolderName from "./ShowAllWithSerial/steps/resolveFolderName.js";
+import checks from "./ShowAllWithSerial/steps/checks.js";
 
 export default ({
     folderName = "",

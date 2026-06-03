@@ -11,5 +11,7 @@ const load = async (cmd) => {
 const showAll = async (...a) =>
     (await load("showAll"))(...a);
 
+const showAllWithSerial = async (...a) =>
+    (await load("showAllWithSerial"))(...a);
 
-export { load, showAll };
+export { load, showAll, showAllWithSerial };
