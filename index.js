@@ -8,8 +8,8 @@ const load = async (cmd) => {
     )).default;
 };
 
-const initHeaderFromCdn = async (...a) =>
-    (await load("initHeaderFromCdn"))(...a);
+const showAll = async (...a) =>
+    (await load("showAll"))(...a);
 
 
-export { load, initHeaderFromCdn };
+export { load, showAll };
