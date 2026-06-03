@@ -24,7 +24,7 @@
     "README.md",
     "LICENSE"
   ],
-  "homepage": "https://cli.keshavsoft.com",
+  "homepage": "https://keshavsoft.github.io/json-crud-ui-table/"
   "repository": {
     "type": "git",
     "url": "https://github.com/keshavsoft/json-crud-ui-table"
