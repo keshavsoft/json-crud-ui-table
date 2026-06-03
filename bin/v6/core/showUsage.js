@@ -1,7 +1,7 @@
 import allVersions from "./getAllVersions.js";
 
 /*
-KSchema CLI – Dynamic Usage Renderer
+json-crud-ui-table CLI – Dynamic Usage Renderer
 */
 
 export default function showUsage(version) {
@@ -19,7 +19,7 @@ export default function showUsage(version) {
 
     const exampleLines = Object.entries(allVersions)
         .map(([name]) =>
-            `  ${gray}npx @keshavsoft/express-todo ${name}${r}`
+            `  ${gray}npx json-crud-ui-table ${name}${r}`
         )
         .join("\n");
 
@@ -27,7 +27,7 @@ export default function showUsage(version) {
 ${c}🚀 express-todo v${version}${r}
 
 ${y}Usage:${r}
-  ${g}npx @keshavsoft/express-todo${r} <command> [options]
+  ${g}npx json-crud-ui-table${r} <command> [options]
 
 ${y}Commands:${r}
 ${commandLines}
@@ -36,6 +36,6 @@ ${y}Examples:${r}
 ${exampleLines}
 
 ${y}Tip:${r}
-  ${gray}npm i -g @keshavsoft/express-todo${r}
+  ${gray}npm i -g json-crud-ui-table${r}
 `);
 }
