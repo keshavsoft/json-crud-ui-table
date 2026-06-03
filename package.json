@@ -1,0 +1,35 @@
+{
+  "name": "json-crud-ui-table",
+  "version": "1.1.1",
+  "description": "ui boilerplate code in public folder, with html and js",
+  "keywords": [
+    "cli",
+    "scaffold",
+    "templates",
+    "node",
+    "project-generator"
+  ],
+  "dependencies": {
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "bin": {
+    "json-crud-ui-table": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://cli.keshavsoft.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keshavsoft/json-crud-ui-table"
+  },
+  "bugs": {
+    "url": "https://github.com/keshavsoft/json-crud-ui-table/issues"
+  }
+}
