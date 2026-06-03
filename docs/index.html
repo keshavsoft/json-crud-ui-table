@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Development Testing</title>
+</head>
+
+<body>
+
+    ```
+    <h1>Local Development Testing using npm link</h1>
+
+    <h2>Step 1 : Update Version</h2>
+
+    <p>Update the version in package.json.</p>
+
+    <pre><code>{
+```
+
+"version": "1.6.2"
+}</code></pre>
+
+    ```
+    <h2>Step 2 : Create Global Link</h2>
+
+    <p>From package root:</p>
+
+    <pre><code>npm link</code></pre>
+
+    <p>This registers the package globally on the local machine.</p>
+
+    <h2>Step 3 : Create Test Folder</h2>
+
+    <pre><code>mkdir ks1
+```
+
+cd ks1</code></pre>
+
+    ```
+    <h2>Step 4 : Consume Local Package</h2>
+
+    <pre><code>npm link json-crud-ui-table</code></pre>
+
+    <p>Expected:</p>
+
+    <pre><code>added 1 package</code></pre>
+
+    <p>A symbolic link will be created inside:</p>
+
+    <pre><code>node_modules/json-crud-ui-table</code></pre>
+
+    <h2>Step 5 : Execute CLI</h2>
+
+    <pre><code>npx json-crud-ui-table withHeader v1</code></pre>
+
+    <p>Expected:</p>
+
+    <pre><code>[keshavsoft] Project created: v1</code></pre>
+
+    <h2>Step 6 : Verify Generated Files</h2>
+
+    <pre><code>v1/
+```
+
+├── config.json
+├── index.html
+└── Index/</code></pre>
+
+    ```
+    <h2>Dynamic Version Loader</h2>
+
+    <pre><code>import getLatestVersion from "./bin/core/getLatestVersion.js";
+```
+
+const load = async (cmd) => {
+const v = getLatestVersion();
+
+```
+return (await import(
+    `./bin/${v}/commands/${cmd}.js`
+)).default;
+```
+
+};</code></pre>
+
+    ```
+    <h3>Benefits</h3>
+
+    <ul>
+        <li>Single entry point</li>
+        <li>Version based command loading</li>
+        <li>Older versions remain untouched</li>
+        <li>Easy rollback support</li>
+        <li>Future versions can be added independently</li>
+    </ul>
+
+    <pre><code>bin/
+```
+
+├── v1/
+├── v2/
+├── v3/</code></pre>
+
+    ```
+    <h2>Useful Commands</h2>
+
+    <h3>Recreate Global Link</h3>
+
+    <pre><code>npm unlink
+```
+
+npm link</code></pre>
+
+    ```
+    <h3>Remove Local Link</h3>
+
+    <pre><code>npm unlink json-crud-ui-table</code></pre>
+
+    <h3>Create Local Link Again</h3>
+
+    <pre><code>npm link json-crud-ui-table</code></pre>
+
+    <h3>Verify Active Package</h3>
+
+    <pre><code>npm ls json-crud-ui-table</code></pre>
+
+    <h2>Validation Checklist</h2>
+
+    <ul>
+        <li>Version updated</li>
+        <li>npm link executed in package repo</li>
+        <li>Test folder created</li>
+        <li>npm link json-crud-ui-table executed</li>
+        <li>CLI command runs successfully</li>
+        <li>Generated files match latest source code</li>
+        <li>Dynamic version loader resolves correct folder</li>
+    </ul>
+    ```
+
+</body>
+
+</html>
