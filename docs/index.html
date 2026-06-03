@@ -1,144 +1,201 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Development Testing</title>
+    <title>json-crud-ui-table</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-slate-100">
 
-    ```
-    <h1>Local Development Testing using npm link</h1>
+    <section class="bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-20 text-center">
 
-    <h2>Step 1 : Update Version</h2>
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-slate-800 text-slate-300">
+                CLI Project Generator
+            </div>
 
-    <p>Update the version in package.json.</p>
+            <h1 class="text-6xl font-bold mt-6">
+                json-crud-ui-table
+            </h1>
 
-    <pre><code>{
-```
+            <p class="text-xl text-slate-300 mt-6 max-w-3xl mx-auto">
+                Generate ready-to-use CRUD UI pages, searchable tables,
+                serial-number grids and responsive menu layouts directly
+                from the command line.
+            </p>
 
-"version": "1.6.2"
-}</code></pre>
+            <div class="mt-10">
+                <code class="bg-slate-800 px-6 py-3 rounded-xl text-lg">
+                    npx json-crud-ui-table withHeader Menu
+                </code>
+            </div>
 
-    ```
-    <h2>Step 2 : Create Global Link</h2>
+        </div>
+    </section>
 
-    <p>From package root:</p>
+    <section class="max-w-7xl mx-auto px-6 py-16">
 
-    <pre><code>npm link</code></pre>
+        <h2 class="text-4xl font-bold text-center">
+            Available Commands
+        </h2>
 
-    <p>This registers the package globally on the local machine.</p>
+        <div class="grid md:grid-cols-4 gap-6 mt-12">
 
-    <h2>Step 3 : Create Test Folder</h2>
+            <div class="bg-white rounded-2xl shadow p-6">
+                <h3 class="text-xl font-bold">showAll</h3>
 
-    <pre><code>mkdir ks1
-```
+                <p class="text-gray-600 mt-3">
+                    Generate a clean CRUD table page.
+                </p>
 
-cd ks1</code></pre>
+                <pre class="mt-4 text-sm bg-slate-100 p-3 rounded"><code>npx json-crud-ui-table
+showAll Masters</code></pre>
+            </div>
 
-    ```
-    <h2>Step 4 : Consume Local Package</h2>
+            <div class="bg-white rounded-2xl shadow p-6">
+                <h3 class="text-xl font-bold">showAllWithSerial</h3>
 
-    <pre><code>npm link json-crud-ui-table</code></pre>
+                <p class="text-gray-600 mt-3">
+                    Adds serial-number support to tables.
+                </p>
 
-    <p>Expected:</p>
+                <pre class="mt-4 text-sm bg-slate-100 p-3 rounded"><code>npx json-crud-ui-table
+showAllWithSerial Masters</code></pre>
+            </div>
 
-    <pre><code>added 1 package</code></pre>
+            <div class="bg-white rounded-2xl shadow p-6">
+                <h3 class="text-xl font-bold">showAllWithSerialSearch</h3>
 
-    <p>A symbolic link will be created inside:</p>
+                <p class="text-gray-600 mt-3">
+                    Search-enabled table template.
+                </p>
 
-    <pre><code>node_modules/json-crud-ui-table</code></pre>
+                <pre class="mt-4 text-sm bg-slate-100 p-3 rounded"><code>npx json-crud-ui-table
+showAllWithSerialSearch Masters</code></pre>
+            </div>
 
-    <h2>Step 5 : Execute CLI</h2>
+            <div class="bg-white rounded-2xl shadow p-6">
+                <h3 class="text-xl font-bold">withHeader</h3>
 
-    <pre><code>npx json-crud-ui-table withHeader v1</code></pre>
+                <p class="text-gray-600 mt-3">
+                    Complete menu-based application layout.
+                </p>
 
-    <p>Expected:</p>
+                <pre class="mt-4 text-sm bg-slate-100 p-3 rounded"><code>npx json-crud-ui-table
+withHeader Menu</code></pre>
+            </div>
 
-    <pre><code>[keshavsoft] Project created: v1</code></pre>
+        </div>
 
-    <h2>Step 6 : Verify Generated Files</h2>
+    </section>
 
-    <pre><code>v1/
-```
+    <section class="bg-white">
 
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <h2 class="text-4xl font-bold text-center">
+                Generated Features
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+
+                <div class="border rounded-2xl p-6">
+                    <h3 class="font-bold text-xl">
+                        Responsive Header
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Mobile-friendly navigation menus powered by Tailwind.
+                    </p>
+                </div>
+
+                <div class="border rounded-2xl p-6">
+                    <h3 class="font-bold text-xl">
+                        CRUD Tables
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Ready-to-use table layouts for data management.
+                    </p>
+                </div>
+
+                <div class="border rounded-2xl p-6">
+                    <h3 class="font-bold text-xl">
+                        Modular Structure
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Organized folders with separate JavaScript entry points.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="bg-slate-900 text-white rounded-3xl p-10">
+
+            <h2 class="text-3xl font-bold">
+                Generated Project Structure
+            </h2>
+
+            <pre class="mt-6 overflow-auto"><code>Menu/
 ├── config.json
 ├── index.html
-└── Index/</code></pre>
+└── Index/
+    └── start.js</code></pre>
 
-    ```
-    <h2>Dynamic Version Loader</h2>
+        </div>
 
-    <pre><code>import getLatestVersion from "./bin/core/getLatestVersion.js";
-```
+    </section>
 
-const load = async (cmd) => {
-const v = getLatestVersion();
+    <section class="max-w-7xl mx-auto px-6 pb-20">
 
-```
-return (await import(
-    `./bin/${v}/commands/${cmd}.js`
-)).default;
-```
+        <div class="bg-white rounded-3xl shadow-lg p-10">
 
-};</code></pre>
+            <h2 class="text-3xl font-bold text-center">
+                Perfect For
+            </h2>
 
-    ```
-    <h3>Benefits</h3>
+            <div class="grid md:grid-cols-4 gap-6 mt-10 text-center">
 
-    <ul>
-        <li>Single entry point</li>
-        <li>Version based command loading</li>
-        <li>Older versions remain untouched</li>
-        <li>Easy rollback support</li>
-        <li>Future versions can be added independently</li>
-    </ul>
+                <div>
+                    <div class="text-4xl">📊</div>
+                    <h3 class="font-semibold mt-3">Admin Panels</h3>
+                </div>
 
-    <pre><code>bin/
-```
+                <div>
+                    <div class="text-4xl">📋</div>
+                    <h3 class="font-semibold mt-3">Masters</h3>
+                </div>
 
-├── v1/
-├── v2/
-├── v3/</code></pre>
+                <div>
+                    <div class="text-4xl">🔍</div>
+                    <h3 class="font-semibold mt-3">Search Screens</h3>
+                </div>
 
-    ```
-    <h2>Useful Commands</h2>
+                <div>
+                    <div class="text-4xl">⚡</div>
+                    <h3 class="font-semibold mt-3">Rapid Prototyping</h3>
+                </div>
 
-    <h3>Recreate Global Link</h3>
+            </div>
 
-    <pre><code>npm unlink
-```
+        </div>
 
-npm link</code></pre>
+    </section>
 
-    ```
-    <h3>Remove Local Link</h3>
-
-    <pre><code>npm unlink json-crud-ui-table</code></pre>
-
-    <h3>Create Local Link Again</h3>
-
-    <pre><code>npm link json-crud-ui-table</code></pre>
-
-    <h3>Verify Active Package</h3>
-
-    <pre><code>npm ls json-crud-ui-table</code></pre>
-
-    <h2>Validation Checklist</h2>
-
-    <ul>
-        <li>Version updated</li>
-        <li>npm link executed in package repo</li>
-        <li>Test folder created</li>
-        <li>npm link json-crud-ui-table executed</li>
-        <li>CLI command runs successfully</li>
-        <li>Generated files match latest source code</li>
-        <li>Dynamic version loader resolves correct folder</li>
-    </ul>
-    ```
+    <footer class="bg-slate-900 text-center text-slate-400 py-6">
+        © 2026 KeshavSoft
+    </footer>
 
 </body>
 
