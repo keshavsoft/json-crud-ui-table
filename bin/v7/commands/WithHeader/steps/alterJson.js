@@ -1,23 +1,52 @@
 import fs from "fs";
 import path from "path";
 
-export const createProject = ({ source, inDestination, inToPath, tableName }) => {
-    const data = fs.readFileSync(path.join(inToPath, "Config", "Schemas", `${tableName}.json`));
-    const dataAsJson = JSON.parse(data);
-    const configFromSource = dataAsJson.columnsConfig;
-    // console.log("inDestination  : ", dataAsJson.columnsConfig);
-
-    const dataSource = path.join(inDestination, "Index", "Configs", "ShowAll", "config.json");
-
-    const configData = fs.readFileSync(dataSource);
-    const configDataAsJson = JSON.parse(configData);
-    // console.log("configDataAsJson  : ", configDataAsJson.columnsConfig);
-    configDataAsJson.columnsConfig = configFromSource;
-
-    fs.writeFileSync(dataSource, JSON.stringify(configDataAsJson));
-
-
-    // fs.cpSync(source, destination, { recursive: true });
+const readJson = (filePath) => {
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
 };
 
-export default createProject;
+const writeJson = (filePath, data) => {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 4));
+};
+
+const getSchemaConfig = ({ inToPath, tableName }) => {
+    const schemaPath = path.join(
+        inToPath,
+        "Config",
+        "Schemas",
+        `${tableName}.json`
+    );
+
+    return readJson(schemaPath).columnsConfig;
+};
+
+const getShowAllConfigPath = ({ inDestination }) => {
+    return path.join(
+        inDestination,
+        "Index",
+        "Configs",
+        "ShowAll",
+        "config.json"
+    );
+};
+
+const updateColumnsConfig = ({ configPath, columnsConfig }) => {
+    const config = readJson(configPath);
+
+    config.columnsConfig = columnsConfig;
+
+    writeJson(configPath, config);
+};
+
+export const alterJson = ({ inDestination, inToPath, tableName }) => {
+    const columnsConfig = getSchemaConfig({ inToPath, tableName });
+
+    const configPath = getShowAllConfigPath({ inDestination });
+
+    updateColumnsConfig({
+        configPath,
+        columnsConfig
+    });
+};
+
+export default alterJson;
