@@ -19,7 +19,7 @@ const getSchemaConfig = ({ fromConfigPath, tableName, showLog }) => {
 
     if (showLog) if (!"columnsConfig" in schemaPathAsJson) console.log("columnsConfig not found in schema source");
 
-    return schemaPath?.columnsConfig;
+    return schemaPathAsJson?.columnsConfig;
 };
 
 const getShowAllConfigPath = ({ inDestination }) => {
