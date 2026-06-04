@@ -9,17 +9,15 @@ const writeJson = (filePath, data) => {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 4));
 };
 
-const getSchemaConfig = ({ fromConfigPath, tableName, showLog }) => {
+const getSchemaConfig = ({ inToPath, tableName }) => {
     const schemaPath = path.join(
-        fromConfigPath,
+        inToPath,
+        "Config",
+        "Schemas",
         `${tableName}.json`
     );
 
-    const schemaPathAsJson = readJson(schemaPath);
-
-    if (showLog) if (!"columnsConfig" in schemaPathAsJson) console.log("columnsConfig not found in schema source");
-
-    return schemaPath?.columnsConfig;
+    return readJson(schemaPath).columnsConfig;
 };
 
 const getShowAllConfigPath = ({ inDestination }) => {
@@ -40,10 +38,10 @@ const updateColumnsConfig = ({ configPath, columnsConfig }) => {
     writeJson(configPath, config);
 };
 
-export const alterJson = ({ inDestination, inToPath, tableName, fromConfigPath, showLog = false }) => {
-    // console.log("------------ : ", inDestination, inToPath, tableName);
+export const alterJson = ({ inDestination, inToPath, tableName }) => {
+    console.log("------------ : ", inDestination, inToPath, tableName);
 
-    const columnsConfig = getSchemaConfig({ fromConfigPath, tableName, showLog });
+    const columnsConfig = getSchemaConfig({ inToPath, tableName });
 
     const configPath = getShowAllConfigPath({ inDestination });
 
