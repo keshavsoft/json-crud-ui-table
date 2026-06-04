@@ -19,7 +19,10 @@ const run = async () => {
   if (!command) return (console.log(`Unknown command: ${input.cmd}\n`), showUsage(version));
 
   await command({
-    folderName: input.folderName
+    folderName: input.folderName,
+    tableName: input.tableName,
+    showLog: input.showLog,
+    toPath: input.toPath
   });
 };
 

@@ -39,6 +39,8 @@ const updateColumnsConfig = ({ configPath, columnsConfig }) => {
 };
 
 export const alterJson = ({ inDestination, inToPath, tableName }) => {
+    console.log("------------ : ", inDestination, inToPath, tableName);
+
     const columnsConfig = getSchemaConfig({ inToPath, tableName });
 
     const configPath = getShowAllConfigPath({ inDestination });
