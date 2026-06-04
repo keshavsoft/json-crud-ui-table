@@ -1,6 +1,6 @@
 {
     "containerId": "kSTableContainer",
-    "tableName": "Ledger Names",
+    "tableName": "",
     "mode": "create",
     "layout": {
         "verticalPosition": "top",
@@ -16,21 +16,16 @@
         "dataLists": {}
     },
     "options": {
-        "firstRow": {
-            "showSearch": true
-        },
         "enabledSections": [
             "vertical",
             "table",
             "footer"
-        ],
-        "table": {
-            "showSerial": true
-        }
+        ]
     },
     "columnsConfig": [
         {
             "columnName": "LedgerName",
+            "title": "LedgerName",
             "cellConfig": {
                 "width": "150px"
             },

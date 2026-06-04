@@ -12,9 +12,43 @@
     <!-- Heroicons (SVG inline, no extra CDN needed) -->
 
     <style>
+        tfoot tr {
+            background-color: #fff8dc;
+        }
+
+        tfoot tr:has(input:focus) {
+            background-color: #ffe082;
+        }
+
+        input:focus {
+            outline: none;
+            border: 2px solid #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.3);
+        }
+
         mark {
             background-color: yellow;
             color: black;
+        }
+
+        .active svg {
+            stroke: #3b82f6;
+            /* Example color */
+        }
+
+        .active span {
+            color: #3b82f6;
+            /* Example color */
+        }
+
+        .danger svg {
+            stroke: #c41d14;
+            /* Example color */
+        }
+
+        .danger span {
+            color: #c41d14;
+            /* Example color */
         }
     </style>
 </head>
@@ -51,7 +85,7 @@
     <!-- <script src="https://keshavsoft.github.io/KsJsTableAi/Public/kstable.js" type="module"></script> -->
     <script src="https://keshavsoft.github.io/tailwind-header/Public/v3/ksheader.js" type="module"></script>
 
-    <script src="https://keshavsoft.github.io/tailwind-table-dom/Public/v7/kstable.js" type="module"></script>
+    <script src="https://keshavsoft.github.io/tailwind-table-dom/Public/v10/kstable.js" type="module"></script>
 
     <script type="module" src="./Index/start.js"></script>
 </body>

@@ -48,3 +48,8 @@ The format is based on Keep a Changelog.
 
 ### Added
 - with header working on alter config
+
+## [1.8.4] - 2026-06-04
+
+### Added
+- with header 3 perfect
