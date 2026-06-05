@@ -53,3 +53,8 @@ The format is based on Keep a Changelog.
 
 ### Added
 - with header 3 perfect
+
+## [1.9.1] - 2026-06-04
+
+### Added
+- with header folder removed for ext
