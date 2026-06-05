@@ -6,7 +6,9 @@ import { announce } from "./WithHeader/steps/announce.js";
 
 import checks from "./WithHeader/steps/checks.js";
 
-import alterJson from "./WithHeader/steps/alterJson.js";
+// import alterJson from "./WithHeader/steps/alterJson.js";
+
+import alterJson from "./WithHeader/steps/AlterJson/index.js";
 
 export default ({
     toPath = process.cwd(),
