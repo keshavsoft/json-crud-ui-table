@@ -1,4 +1,5 @@
 import { load } from "../../index.js";
+import path from "path";
 
 const commandToSend = "HeaderOnly";
 
@@ -9,6 +10,6 @@ const folderName = process.argv[2];
 const showLog = process.argv[3];
 
 startFunc({
-    folderName,
+    toPath: path.join(process.cwd(), folderName),
     showLog
 }).then();
