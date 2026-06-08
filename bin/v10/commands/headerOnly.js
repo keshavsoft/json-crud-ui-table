@@ -9,8 +9,7 @@ import checks from "./HeaderOnly/steps/checks.js";
 export default ({
     toPath = process.cwd(),
     inAnnounce = true,
-    showLog = "false",
-    configPath
+    showLog = "false"
 }) => {
     const isShowLog = showLog === true || showLog?.trim() === "true";
 
