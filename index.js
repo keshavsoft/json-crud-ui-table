@@ -17,4 +17,10 @@ const showAllWithSerial = async (...a) =>
 const withHeader = async (...a) =>
     (await load("withHeader"))(...a);
 
-export { load, showAll, showAllWithSerial, withHeader };
+const headerOnly = async (...a) =>
+    (await load("headerOnly"))(...a);
+
+export {
+    load, showAll, showAllWithSerial, withHeader,
+    headerOnly
+};
