@@ -11,10 +11,7 @@ import alterJson from "./TableComp/steps/AlterJson/index.js";
 export default ({
     toPath = process.cwd(),
     inAnnounce = true,
-    showLog = "false",
-    inAlterConfig = true,
-    tableName,
-    configPath
+    showLog = "false"
 }) => {
     const isShowLog = showLog === true || showLog?.trim() === "true";
 
