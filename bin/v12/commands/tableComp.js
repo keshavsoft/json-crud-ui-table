@@ -6,8 +6,6 @@ import { announce } from "./TableComp/steps/announce.js";
 
 import checks from "./TableComp/steps/checks.js";
 
-import alterJson from "./TableComp/steps/AlterJson/index.js";
-
 export default ({
     toPath = process.cwd(),
     inAnnounce = true,
@@ -44,18 +42,6 @@ export default ({
         destination,
         showLog
     });
-
-    if (isShowLog) console.log("Alter config started...");
-
-    if (inAlterConfig) {
-        alterJson({
-            inDestination: destination,
-            inToPath: toPath,
-            tableName,
-            fromConfigPath: configPath,
-            showLog: isShowLog
-        });
-    };
 
     if (inAnnounce) {
         if (isShowLog) console.log("Announcing...");
